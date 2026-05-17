@@ -53,7 +53,7 @@ const Home: React.FC<HomeProps> = ({ className }) => {
       </motion.h1>
 
       {/* Stats Grid with staggered slide-up animation */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {statsData.map((stat, index) => (
           <motion.div
             key={stat.title}
