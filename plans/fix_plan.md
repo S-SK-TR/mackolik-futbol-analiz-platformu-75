@@ -7,14 +7,14 @@ Mevcut projeyi modern UI/UX, güçlü mimari ve tam PWA (Progressive Web App) de
 
 # 🏗️ Faz 1 — PWA & Core Altyapı
 ## 1.1 Progressive Web App (PWA)
-- [ ] **Manifest**: `public/manifest.json` yapılandırması (premium ikonlar, tema renkleri).
-- [ ] **Service Worker**: Vite PWA plugin ile çevrimdışı çalışma ve cache yönetimi.
-- [ ] **Installable**: Tarayıcıda "Uygulamayı Yükle" desteği ve mobil uyumluluk.
+- [x] **Manifest**: `public/manifest.json` yapılandırması (premium ikonlar, tema renkleri).
+- [x] **Service Worker**: Vite PWA plugin ile çevrimdışı çalışma ve cache yönetimi.
+- [x] **Installable**: Tarayıcıda "Uygulamayı Yükle" desteği ve mobil uyumluluk.
 
 ## 1.2 Tasarım Sistemi (Design Tokens)
-- [ ] **Modern Typography**: Outfit (başlıklar) ve Inter (gövde) fontları.
-- [ ] **Color Palette**: HSL tabanlı, derinlik hissi veren dark/light mode renkleri.
-- [ ] **Tailwind Config**: Glassmorphism, glow efektleri ve custom shadow tanımları.
+- [x] **Modern Typography**: Outfit (başlıklar) ve Inter (gövde) fontları.
+- [x] **Color Palette**: HSL tabanlı, derinlik hissi veren dark/light mode renkleri.
+- [x] **Tailwind Config**: Glassmorphism, glow efektleri ve custom shadow tanımları.
 
 ---
 

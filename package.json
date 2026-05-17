@@ -12,7 +12,9 @@
     "tailwindcss": "^3.4.1",
     "postcss": "^8.4.35",
     "autoprefixer": "^10.4.17",
-    "vite-plugin-pwa": "^0.19.8"
+    "vite-plugin-pwa": "^0.19.8",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/typography": "latest"
   },
   "scripts": {
     "dev": "vite",
