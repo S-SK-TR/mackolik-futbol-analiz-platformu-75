@@ -15,19 +15,22 @@
   }
 
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   body {
-    @apply bg-bg-base text-text-primary font-body;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   .glass-card {
-    @apply bg-glass-bg backdrop-blur-md border border-glass-border;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
   }
 
   .glass-border {
-    @apply border border-glass-border;
+    border: 1px solid var(--glass-border);
   }
 }
