@@ -1,101 +1,41 @@
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
-import { useStore } from '@/store';
+import { useQuery } from '@tanstack/react-query'
 
-// API base URL
-const API_BASE_URL = 'https://api.example.com';
+const API_BASE_URL = 'https://api.example.com'
 
-// API endpoints
-const API_ENDPOINTS = {
-  DASHBOARD_STATS: '/dashboard/stats',
-  RECENT_MATCHES: '/matches/recent',
-  TEAM_STATS: '/teams/stats',
-  PLAYER_PERFORMANCE: '/players/performance'
-};
-
-// API client with axios
-const apiClient = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  }
-});
-
-// Home API service
-class HomeApiService {
-  // Fetch dashboard statistics
-  static async getDashboardStats() {
-    const response = await apiClient.get(API_ENDPOINTS.DASHBOARD_STATS);
-    return response.data;
-  }
-
-  // Fetch recent matches
-  static async getRecentMatches() {
-    const response = await apiClient.get(API_ENDPOINTS.RECENT_MATCHES);
-    return response.data;
-  }
-
-  // Fetch team statistics
-  static async getTeamStats(teamId: string) {
-    const response = await apiClient.get(`${API_ENDPOINTS.TEAM_STATS}/${teamId}`);
-    return response.data;
-  }
-
-  // Fetch player performance
-  static async getPlayerPerformance(playerId: string) {
-    const response = await apiClient.get(`${API_ENDPOINTS.PLAYER_PERFORMANCE}/${playerId}`);
-    return response.data;
+// Mock API fonksiyonları
+const fetchDashboardStats = async () => {
+  // Gerçek uygulamada API çağrısı
+  return {
+    totalMatches: 128,
+    totalPlayers: 45,
+    averageRating: 7.8
   }
 }
 
-export const useHomeApi = () => {
-  const setHomeData = useStore(state => state.setHomeData);
+const fetchRecentMatches = async () => {
+  // Gerçek uygulamada API çağrısı
+  return [
+    { id: 1, teamA: 'Galatasaray', teamB: 'Fenerbahçe', score: '3-2' },
+    { id: 2, teamA: 'Beşiktaş', teamB: 'Trabzonspor', score: '1-1' },
+    { id: 3, teamA: 'Bursaspor', teamB: 'Sivasspor', score: '2-0' }
+  ]
+}
 
-  // Dashboard stats query
+export const useHomeApi = () => {
   const dashboardStatsQuery = useQuery({
     queryKey: ['dashboardStats'],
-    queryFn: HomeApiService.getDashboardStats,
-    onSuccess: (data) => {
-      setHomeData('dashboardStats', data);
-    },
-    staleTime: 5 * 60 * 1000 // 5 dakika önbellek
-  });
+    queryFn: fetchDashboardStats,
+    staleTime: 5 * 60 * 1000 // 5 dakika
+  })
 
-  // Recent matches query
   const recentMatchesQuery = useQuery({
     queryKey: ['recentMatches'],
-    queryFn: HomeApiService.getRecentMatches,
-    onSuccess: (data) => {
-      setHomeData('recentMatches', data);
-    },
-    staleTime: 5 * 60 * 1000 // 5 dakika önbellek
-  });
-
-  // Team stats query
-  const teamStatsQuery = (teamId: string) => useQuery({
-    queryKey: ['teamStats', teamId],
-    queryFn: () => HomeApiService.getTeamStats(teamId),
-    onSuccess: (data) => {
-      setHomeData('teamStats', data);
-    },
-    staleTime: 5 * 60 * 1000 // 5 dakika önbellek
-  });
-
-  // Player performance query
-  const playerPerformanceQuery = (playerId: string) => useQuery({
-    queryKey: ['playerPerformance', playerId],
-    queryFn: () => HomeApiService.getPlayerPerformance(playerId),
-    onSuccess: (data) => {
-      setHomeData('playerPerformance', data);
-    },
-    staleTime: 5 * 60 * 1000 // 5 dakika önbellek
-  });
+    queryFn: fetchRecentMatches,
+    staleTime: 10 * 60 * 1000 // 10 dakika
+  })
 
   return {
     dashboardStatsQuery,
-    recentMatchesQuery,
-    teamStatsQuery,
-    playerPerformanceQuery
-  };
-};
+    recentMatchesQuery
+  }
+}
