@@ -7,9 +7,10 @@ interface CardProps {
   icon: React.ElementType
   variant?: 'default' | 'primary' | 'secondary' | 'accent'
   className?: string
+  children?: React.ReactNode
 }
 
-export function Card({ title, value, icon: Icon, variant = 'default', className }: CardProps) {
+export function Card({ title, value, icon: Icon, variant = 'default', className, children }: CardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
@@ -32,6 +33,7 @@ export function Card({ title, value, icon: Icon, variant = 'default', className 
       </div>
       <p className="text-3xl font-bold text-white mb-1">{value}</p>
       <p className="text-sm text-gray-400">{title}</p>
+      {children}
     </motion.div>
   )
 }
