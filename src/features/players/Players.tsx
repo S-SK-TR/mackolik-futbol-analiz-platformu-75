@@ -2,7 +2,7 @@ import { useStore } from '@/store'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
-import { Users, Shield, SoccerBall, Star } from 'lucide-react'
+import { Users, Shield, Activity, Star } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -71,7 +71,7 @@ export function Players() {
                     <span>{player.team.name}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-text-muted">
-                    <SoccerBall size={14} />
+                    <Activity size={14} />
                     <span>Goals: {player.stats.goals}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-text-muted">

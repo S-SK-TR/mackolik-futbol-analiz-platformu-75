@@ -2,7 +2,7 @@ import { useStore } from '@/store'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
-import { Football, Calendar, MapPin, Clock } from 'lucide-react'
+import { Trophy, Calendar, MapPin, Clock } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -61,7 +61,7 @@ export function Matches() {
               <Card
                 title={`${match.homeTeam.name} vs ${match.awayTeam.name}`}
                 value={match.score ? `${match.score.home}-${match.score.away}` : 'VS'}
-                icon={Football}
+                icon={Trophy}
                 variant="primary"
                 className="h-full"
               >

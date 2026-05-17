@@ -11,7 +11,7 @@ const navItems = [
   { to: '/settings', icon: Settings, label: 'Ayarlar' }
 ];
 
-const AppShell: React.FC = () => {
+export const AppShell: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -99,7 +99,7 @@ const AppShell: React.FC = () => {
 
         {/* Page Content */}
         <main className="flex-1 overflow-y-auto">
-          <Outlet />
+          {children || <Outlet />}
         </main>
       </div>
 
@@ -133,5 +133,4 @@ const AppShell: React.FC = () => {
     </div>
   );
 };
-
-export default AppShell;
+

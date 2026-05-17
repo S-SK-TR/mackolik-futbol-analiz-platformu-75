@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { useStore } from '@/store'
-import { BarChart, PieChart, TrendingUp, Users, Football } from 'lucide-react'
+import { BarChart, PieChart, TrendingUp, Users, Trophy } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,7 +36,7 @@ export function Dashboard() {
           <Card
             title="Total Matches"
             value={matches.length.toString()}
-            icon={Football}
+            icon={Trophy}
             variant="primary"
           />
         </motion.div>

@@ -2,7 +2,7 @@ import { useStore } from '@/store'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
-import { BarChart, PieChart, LineChart, TrendingUp } from 'lucide-react'
+import { BarChart, PieChart, LineChart, TrendingUp, Activity } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -68,7 +68,7 @@ export function Analytics() {
           <Card
             title="Shots"
             value={(matchStats?.shots || 0).toString()}
-            icon={SoccerBall}
+            icon={Activity}
             variant="secondary"
           />
         </motion.div>

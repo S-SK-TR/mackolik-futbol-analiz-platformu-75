@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { useStore } from '@/store'
-import { LayoutDashboard, Football, Users, BarChart, Settings, LogOut } from 'lucide-react'
+import { LayoutDashboard, Trophy, Users, BarChart, Settings, LogOut } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/matches', icon: Football, label: 'Matches' },
+  { to: '/matches', icon: Trophy, label: 'Matches' },
   { to: '/players', icon: Users, label: 'Players' },
   { to: '/analytics', icon: BarChart, label: 'Analytics' },
   { to: '/settings', icon: Settings, label: 'Settings' }
