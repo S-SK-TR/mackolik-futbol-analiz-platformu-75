@@ -1,0 +1,33 @@
+/* @tailwind base — centralized in src/index.css */
+
+
+
+@layer base {
+  :root {
+    --bg-base: #0F172A;
+    --bg-surface: #1E293B;
+    --text-primary: #FFFFFF;
+    --text-muted: #94A3B8;
+    --border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --blur: blur(16px) saturate(180%);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-bg-base text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .glass-card {
+    @apply bg-glass-bg backdrop-blur-md border border-glass-border;
+  }
+
+  .glass-border {
+    @apply border border-glass-border;
+  }
+}
